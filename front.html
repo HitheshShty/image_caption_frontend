@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #image-processing { 
+          width: 50%;
+          margin: 120px auto;
+          padding: 130px;
+          border: 10px solid #ecb887;
+          border-radius: 4px;
+          background: url(input.jpg);
+          background-size: cover;
+          background-position: center;
+
+        }
+    
+        #image-processing h1 {
+          text-align: center;
+          margin-bottom: 10px;
+          padding-top: 5px;
+          padding-bottom: 30px;
+          font-size: 50px;
+          color: #ffdd00;
+        }
+    
+        #image-processing form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        #image-processing input[type="file"] {
+          margin-bottom: 10px;
+        }
+     
+        #image-processing button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#image-processing button[type="submit"]:hover {
+  background-color: #3e8e41;
+  transform: translateY(-5px);
+}
+    
+        #image-processing button[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+        #contact {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#contact h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+#contact textarea {
+  height: 150px;
+}
+
+#contact button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.2rem;
+}
+
+#contact button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+.custom-file-upload {
+  background-color: #4c60af;
+  color: white;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.custom-file-upload i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 5px;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+.confirmation-message {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  text-align: center;
+  overflow: hidden; /* This ensures that the confirmation box doesn't expand beyond its maximum width */
+}
+
+.confirmation-message img {
+  max-width: 100%;
+  height: auto; /* This ensures that the image scales proportionally while maintaining its aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
+      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Demo Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+           
+        </nav>
+    </header>
+    <section id="image-processing"> 
+        <h1 class="stylish-h1">Image Captioning</h1>
+         <form>
+             <label for="image" class="custom-file-upload"> 
+                <input type="file" name="image" id="image"> 
+                <i class="fas fa-cloud-upload-alt"></i> Upload Image 
+            </label> 
+            <div id="confirmation-message" class="confirmation-message">
+
+            </div>
+            <button type="submit" name="generate">Generate Captions
+
+            </button> </form> 
+            <!-- Display uploaded image and generated captions here --> 
+            
+             <script> document.getElementById('image').addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                const fileName = file.name;
+                const confirmationMessage = document.getElementById('confirmation-message');
+                const imageUrl = URL.createObjectURL(file);
+                const image = document.createElement('img');
+                image.src = imageUrl;
+                confirmationMessage.innerHTML = '';
+                confirmationMessage.appendChild(image);
+                confirmationMessage.appendChild(document.createTextNode(`Image uploaded: ${fileName}`));
+              });</script>
+                 </section>
+    <section id="about">
+  <!-- <h1>ABOUT US</h1>
+  <div class="team-container">
+    <div class="team-member">
+        <img src="team-member-1.jpg" alt="Project Guide">
+        <h2>Manjunath E C</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+      </div>
+    <div class="team-member">
+      <img src="team-member-1.jpg" alt="Team member 1">
+      <h2>Abhijith Mallya</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+    </div>
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team member 2">
+      <h2>Hithesh Shetty</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+    </div>
+    <div class="team-member">
+      <img src="team-member-3.jpg" alt="Team member 3">
+      <h2>Mohammed Irshad</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+    </div>
+    <div class="team-member">
+        <img src="team-member-4.jpg" alt="Team member 4">
+        <h2>Muhammed Zainuddin Moosa</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+      </div>
+  </div>
+  
+</section>
+        <footer>
+            <p>© 2024 Poject Demo Website. All Rights Reserved.</p> 
+        </footer> -->
+        <script>
+          document.querySelector('#image-processing form').addEventListener('submit', async (event) => {
+              event.preventDefault(); // Prevent form submission
+      
+              const formData = new FormData();
+              const fileInput = document.querySelector('#image-processing input[type="file"]');
+              formData.append('image', fileInput.files[0]);
+      
+              try {
+                  const response = await fetch('http://localhost:8000/', {
+                      method: 'GET',
+                      body: formData
+                  });
+                  
+      
+                  if (!response.ok) {
+                      throw new Error('Failed to generate captions');
+                  }
+      
+                  const captions = await response.json();
+                  displayCaptions(captions);
+              } catch (error) {
+                  console.error(error);
+                  alert('Failed to generate captions. Please try again.');
+              }
+          });
+      
+          function displayCaptions(captions) {
+              const confirmationMessage = document.querySelector('#image-processing .confirmation-message');
+              confirmationMessage.innerHTML = ''; // Clear previous content
+      
+              captions.forEach(caption => {
+                  const captionElement = document.createElement('p');
+                  captionElement.textContent = caption;
+                  confirmationMessage.appendChild(captionElement);
+              });
+          }
+      </script>
+      
+
+</body>
+ </html> 

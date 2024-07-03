@@ -1,0 +1,256 @@
+/* CSS for Chat Box */
+#chatBox {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .userMessage {
+    text-align: right;
+    margin-bottom: 5px;
+    color: #007bff;
+  }
+  
+  .botMessage {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #28a745;
+  }
+  
+  /* Additional Styling */
+  #uploadForm {
+    margin-bottom: 20px;
+  }
+  
+  #uploadForm input[type="file"] {
+    margin-right: 10px;
+  }
+  
+  #uploadForm button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #imagePreviewContainer {
+    text-align: center; /* Center-align content */
+  }
+  
+  #imagePreviewContainer img {
+    max-width: 300px;
+    max-height: 300px;
+    border: 3px solid transparent; /* Initial border */
+    animation: borderAnimation 2s infinite;
+  }
+  
+  @keyframes borderAnimation {
+    0% {
+      border-color: blue;
+    }
+    50% {
+      border-color: lightblue;
+    }
+    100% {
+      border-color: blue;
+    }
+  }
+  
+  /* Navigation Bar Styles */
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Center Content */
+#center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#center-content h2,
+#center-content form,
+#center-content span,
+#center-content #imagePreviewContainer,
+#center-content #chatBox {
+  margin-top: 20px;
+}
+
+/* Add your additional styles as needed */
+
+
+/* Additional Styling */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#uploadForm {
+  margin-bottom: 20px;
+}
+
+#uploadForm input[type="file"] {
+  margin-right: 10px;
+}
+
+#uploadForm button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#imagePreviewContainer {
+  margin-top: 20px;
+}
+
+#imagePreviewContainer h3 {
+  margin-bottom: 10px;
+}
+/* CSS for Navigation Bar */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.about-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* CSS for Animated Name */
+.animated-name {
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Additional Styling */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#uploadForm {
+  margin-bottom: 20px;
+}
+
+#uploadForm input[type="file"] {
+  margin-right: 10px;
+}
+
+#uploadForm button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#imagePreviewContainer {
+  margin-top: 20px;
+}
+
+#imagePreviewContainer h3 {
+  margin-bottom: 10px;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

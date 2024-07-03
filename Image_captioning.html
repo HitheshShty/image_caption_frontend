@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Captioning</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="#" class="home-btn">Home</a></li>
+      <li><a href="#" class="about-btn">About</a></li>
+    </ul>
+  </nav>
+  
+  <h1 class="animated-name">Image Caption Generator</h1>
+  <div id="center-content">
+    <h2>Upload an Image</h2>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="imageInput" name="file" onchange="previewImage(event)">
+      <button type="button" onclick="uploadImage()">Generate caption</button>
+    </form>
+
+    <!-- Image Preview Container -->
+    <div id="imagePreviewContainer">
+      <h3>Uploaded image</h3>
+      <img id="imagePreview"  style="max-width: 300px; max-height: 300px;">
+      <div id="captionDisplay"></div> <!-- Caption Display -->
+      <button onclick="convertToAudio()">Read out</button> <!-- Button to read out the text -->
+    </div>
+
+    <!-- Chat Box for Displaying Captions -->
+    <div id="chatBox">
+      <span id="response"></span>
+    </div>
+  </div>
+  <!-- <div id="audioOutputContainer">
+    <h3>Audio Output</h3>
+   <audio controls id="audioPlayer">
+   Your browser does not support the audio element.
+    </audio>
+  </div> -->
+</body>
+<script src="script.js"></script>
+</html>
+    

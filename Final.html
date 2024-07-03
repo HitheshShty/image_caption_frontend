@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+</head>
+<body>
+    <section id="image-processing"> 
+        <h1>Image Captioning</h1>
+        <form>
+            <label for="image" class="custom-file-upload"> 
+                <input type="file" name="image" id="image"> 
+                <i class="fas fa-cloud-upload-alt"></i> Upload Image 
+            </label> 
+            <div id="confirmation-message" class="confirmation-message"></div>
+            <button type="submit" name="generate">Generate Captions</button>
+        </form> 
+    </section>
+
+    <script>
+        document.querySelector('#image-processing form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form submission
+            console.log("HEllo world")
+            const formData = new FormData();
+            const fileInput = document.querySelector('#image-processing input[type="file"]');
+            formData.append('image', fileInput.files[0]);
+            console.log("********Form Data --> ",formData);
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/generateCaption/', {
+                    method: 'POST', // Use POST method to send file data
+                    body: formData
+                });
+                console.log("**********response -->",response);
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate captions');
+                }
+
+                const captions = await response.json();
+                displayCaptions(captions);
+            } catch (error) {
+                console.error(error);
+                alert('Failed to generate captions. Please try again.');
+            }
+        });
+
+        function displayCaptions(captions) {
+            const confirmationMessage = document.querySelector('#image-processing .confirmation-message');
+            confirmationMessage.innerHTML = ''; // Clear previous content
+
+            captions.forEach(caption => {
+                const captionElement = document.createElement('p');
+                captionElement.textContent = caption;
+                confirmationMessage.appendChild(captionElement);
+            });
+        }
+    </script>
+</body>
+</html>
+
+<!--http://127.0.0.1:8000/generateCaption/-->
